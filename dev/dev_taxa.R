@@ -1,4 +1,5 @@
 # [FUNCTIONS] --------------------------------------------------------------
+# [dev] add trivial level to fun_taxa_hclust (top level with 1 set) -------
 # - fun_taxa_hclust ---------------------------------------------------------
 fun_taxa_hclust <- function(
     mtx_similarity
