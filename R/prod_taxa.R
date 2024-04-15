@@ -307,6 +307,7 @@ fun_taxa_list <- function(df_taxa, lgc_unnest = F){
               .x = .
               , ~ paste0(
                 first(.x$taxon),
+                '_',
                 first(.x$taxon_id)
               )
             )

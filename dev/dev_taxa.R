@@ -1,5 +1,10 @@
 # [FUNCTIONS] --------------------------------------------------------------
 # [dev] add trivial level to fun_taxa_hclust (top level with 1 set) -------
+# [dev] add optional int_levels = NULL ------------------------------------
+
+
+# if int_levels == NULL and dbl_height = NULL, find optimal number of taxa by calculating the max number of taxa for which the last taxon is not redundant (i.e. the number of sets within the last taxon is still higher than the number of sets in the previous aggregation level)
+# use weighted mean to optimize number of aggregation levels?
 # - fun_taxa_hclust ---------------------------------------------------------
 fun_taxa_hclust <- function(
     mtx_similarity
@@ -310,6 +315,7 @@ fun_taxa_list <- function(df_taxa, lgc_unnest = F){
               .x = .
               , ~ paste0(
                 first(.x$taxon),
+                '_',
                 first(.x$taxon_id)
               )
             )
